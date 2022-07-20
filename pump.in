@@ -249,7 +249,7 @@ StartIncludeServer() {
   fi
 
   # Create a temporary directory $socket_dir.
-  socket_dir=`MakeTmpFile "distcc-pump" -d` || exit 1
+  socket_dir=`TMPDIR="/tmp" MakeTmpFile "distcc-pump" -d` || exit 1
 
   # The socket file on which the include server accepts connections.
   socket="$socket_dir/socket"
